@@ -1,0 +1,317 @@
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #f5a623;
+  --background-color: #f0f4f8;
+  --text-color: #333;
+  --card-bg-color: #ffffff;
+  --input-border-color: #d1d5db;
+  --input-focus-color: #3b82f6;
+  --error-color: #ef4444;
+  --success-color: #10b981;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, var(--background-color) 0%, #e6e9f0 100%);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+nav {
+  background-color: var(--card-bg-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem; /* Reduced padding */
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 0.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 0.5rem 0.8rem; /* Reduced padding */
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.notifications {
+  cursor: pointer;
+}
+
+.bell-icon {
+  transition: transform 0.3s ease;
+}
+
+.notifications:hover .bell-icon {
+  transform: scale(1.1);
+}
+
+main {
+  max-width: 1000px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+
+.container {
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.8rem; /* Reduced padding */
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 12px;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 1rem; /* Reduced margin */
+}
+
+.form-group {
+  margin-bottom: 0.5rem; /* Reduced margin */
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem; /* Reduced margin */
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.4rem; /* Reduced padding */
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--input-focus-color);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+  transform: scale(1.02);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem; /* Reduced padding */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.patient-details,
+.success-message {
+  margin-top: 1rem; /* Reduced margin */
+  display: none;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.patient-details p {
+  margin-bottom: 0.5rem;
+}
+
+.patient-details strong {
+  color: var(--primary-color);
+}
+
+.error-message {
+  color: var(--error-color);
+  text-align: center;
+  margin-top: 0.5rem; /* Reduced margin */
+  font-weight: bold;
+  display: none;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.success-message {
+  background-color: var(--success-color);
+  color: white;
+  padding: 0.5rem; /* Reduced padding */
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Adjusted min width */
+  gap: 0.5rem; /* Reduced gap */
+  margin-bottom: 1rem; /* Reduced margin */
+}
+
+.stat-card {
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  padding: 1rem; /* Reduced padding */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card svg {
+  width: 40px; /* Reduced size */
+  height: 40px; /* Reduced size */
+  margin-right: 0.5rem; /* Reduced margin */
+  color: var(--primary-color);
+}
+
+.stat-card h3 {
+  font-size: 0.8rem; /* Reduced font size */
+  margin: 0;
+  color: #666;
+}
+
+.stat-number {
+  font-size: 1.4rem; /* Reduced font size */
+  font-weight: bold;
+  margin: 0.5rem 0 0;
+  color: var(--primary-color);
+}
+
+.chart-container {
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  padding: 1rem; /* Reduced padding */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem; /* Reduced margin */
+}
+
+.chart-container h2 {
+  font-size: 1.1rem; /* Reduced font size */
+  margin-bottom: 0.5rem; /* Reduced margin */
+}
+
+.charts {
+  display: flex; /* Use flexbox to arrange the charts side by side */
+  justify-content: space-around; /* Space evenly between charts */
+  align-items: flex-start; /* Align charts to the top */
+}
+
+.chart {
+  width: 45%; /* Each chart takes up 45% of the container's width */
+  max-width: 300px; /* Optional: set a max width for charts */
+  height: auto; /* Allow height to adjust automatically */
+}
+
+#patientChart {
+  height: 300px; /* Reduced height */
+  max-height: 350px;
+}
+
+#genderChart {
+  height: 350px; /* Reduced height */
+  max-height: 350px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 1rem;
+  }
+
+  .nav-links li {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+
+  .notifications {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .container {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .charts {
+    flex-direction: column; /* Stacking charts vertically on small screens */
+  }
+
+  .chart {
+    width: 100%; /* Full width on smaller screens */
+  }
+}

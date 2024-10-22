@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hospital Management System - Patient Details</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">CareSync</div>
+        <ul class="nav-links">
+          <li><a href="index.html" data-tab="overview">Overview</a></li>
+          <li><a href="patient.html" data-tab="patients">Patients</a></li>
+          <li>
+            <a href="#" class="active" data-tab="patient-details"
+              >Patient Details</a
+            >
+          </li>
+        </ul>
+        <div class="notifications">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="bell-icon">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <h1>Patient Details</h1>
+        <form id="patientLookupForm">
+            <div class="form-group">
+              <label for="patientId">Patient Name:</label>
+              <input type="text" id="patientNameInput" name="patientName" required /> <!-- Changed here -->
+            </div>
+            <button type="submit">Fetch Patient Details</button>
+          </form>
+          <div id="patientDetails" class="patient-details" style="display: none;">
+            <h2>Patient Information</h2>
+            <p><strong>Name:</strong> <span id="patientNameDisplay"></span></p> <!-- Changed here -->
+            <p><strong>Age:</strong> <span id="patientAge"></span></p>
+            <p><strong>Gender:</strong> <span id="patientGender"></span></p>
+            <p><strong>Contact:</strong> <span id="patientContact"></span></p>
+            <p>
+              <strong>Medical History:</strong>
+              <span id="patientMedicalHistory"></span>
+            </p>
+            <p>
+              <strong>Assigned Doctor:</strong>
+              <span id="patientAssignedDoctor"></span>
+            </p>
+          </div>
+          <div id="errorMessage" class="error-message"></div>
+          
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
