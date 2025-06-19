@@ -2,15 +2,18 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
 
 // Initialize app
 const app = express();
 app.use(cors());
 app.use(bodyParser.json()); // To parse JSON bodies
+dotenv.config();
+const MONGO_URI = process.env.MONGO_URI;
 
 // MongoDB Connection
 mongoose
-  .connect("mongodb://localhost:27017/hospital-management")
+  .connect(MONGO_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((error) => console.log("Error connecting to MongoDB:", error));
 
